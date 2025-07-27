@@ -1,0 +1,379 @@
+.industryExpertise {
+  position: relative;
+  padding: 5rem 0;
+  overflow: hidden;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+
+  // Background Elements
+  &::before {
+    content: "";
+    position: absolute;
+    top: 5rem;
+    left: 2.5rem;
+    width: 18rem;
+    height: 18rem;
+    background: radial-gradient(
+      circle,
+      rgba(0, 168, 204, 0.1) 0%,
+      transparent 70%
+    );
+    border-radius: 50%;
+    filter: blur(3rem);
+    z-index: 1;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 5rem;
+    right: 2.5rem;
+    width: 24rem;
+    height: 24rem;
+    background: radial-gradient(
+      circle,
+      rgba(0, 119, 190, 0.1) 0%,
+      transparent 70%
+    );
+    border-radius: 50%;
+    filter: blur(3rem);
+    z-index: 1;
+  }
+}
+
+.backgroundGrid {
+  position: absolute;
+  inset: 0;
+  opacity: 0.2;
+  background-image: linear-gradient(rgba(0, 168, 204, 0.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 168, 204, 0.1) 1px, transparent 1px);
+  background-size: 50px 50px;
+  z-index: 1;
+}
+
+.container {
+  max-width: 90vw;
+  margin: 0 auto;
+  position: relative;
+  z-index: 10;
+}
+
+// Section Header
+.sectionHeader {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.sectionTitle {
+  font-size: clamp(2rem, 8vw, 3.5rem);
+  font-weight: 700;
+  color: var(--black);
+  margin-bottom: 1.5rem;
+  font-family: "clash", sans-serif;
+  line-height: 1.1;
+  margin-bottom: 2rem;
+
+  span {
+    padding-left: 1rem;
+  }
+}
+
+// Slideshow Styles
+.slideshowContainer {
+  width: 90vw;
+  margin: 0 auto;
+}
+
+.slideshowContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: 3rem;
+
+  @media (min-width: 1024px) {
+    flex-direction: row;
+    gap: 5rem;
+  }
+}
+
+// Industry Titles
+.industryTitles {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  flex: 1;
+  padding: 2rem;
+
+  svg {
+    width: 2rem;
+    height: 2rem;
+  }
+
+  @media (min-width: 768px) {
+    gap: 1.5rem;
+  }
+}
+
+.industryTitle {
+  cursor: pointer;
+  font-size: clamp(1rem, 5vw, 1rem);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: -0.025em;
+  color: var(--white);
+  font-family: "clash", sans-serif;
+  transition: color 0.3s ease;
+  position: relative;
+  overflow: hidden;
+
+  span {
+    font-size: 2rem;
+  }
+
+  &:hover {
+    color: #00a8cc;
+    animation: float 2s ease-in-out infinite;
+  }
+}
+
+// Image Container
+.imageContainer {
+  flex: 1;
+  width: 40rem;
+  width: 100%;
+
+  @media (min-width: 1024px) {
+    max-width: 36rem;
+  }
+}
+
+.imageWrapper {
+  aspect-ratio: 4/4;
+  border-radius: 1rem;
+  overflow: hidden;
+  border: 1px solid rgba(0, 168, 204, 0.2);
+  box-shadow: 0 25px 50px -12px rgba(0, 168, 204, 0.1);
+  position: relative;
+  background: rgba(0, 0, 0, 0.5);
+
+  &:hover {
+    .industryImage {
+      transform: scale(1.05);
+    }
+  }
+}
+
+.industryImage {
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s cubic-bezier(0.33, 1, 0.68, 1);
+}
+
+.imageOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.8) 0%,
+    transparent 50%,
+    transparent 100%
+  );
+  display: flex;
+  align-items: flex-end;
+  padding: 1.5rem;
+  z-index: 10;
+}
+
+.overlayContent {
+  color: var(--white);
+
+  .overlayTitle {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    font-family: "satoshi", sans-serif;
+  }
+
+  .overlayDescription {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 0.875rem;
+    margin-bottom: 0.75rem;
+    font-family: "manrope", sans-serif;
+    line-height: 1.4;
+  }
+
+  .expertiseTags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+
+    .expertiseTag {
+      background: rgba(0, 168, 204, 0.2);
+      color: #00a8cc;
+      padding: 0.25rem 0.5rem;
+      border-radius: 9999px;
+      font-size: 0.75rem;
+      font-weight: 500;
+      font-family: "satoshi", sans-serif;
+    }
+
+    .moreTag {
+      background: rgba(255, 255, 255, 0.2);
+      color: var(--white);
+      padding: 0.25rem 0.5rem;
+      border-radius: 9999px;
+      font-size: 0.75rem;
+      font-weight: 500;
+      font-family: "satoshi", sans-serif;
+    }
+  }
+}
+
+// CTA Section
+.ctaSection {
+  text-align: center;
+  margin-top: 5rem;
+  background: linear-gradient(
+    135deg,
+    rgba(10, 10, 10, 0.8),
+    rgba(26, 26, 26, 0.8)
+  );
+  backdrop-filter: blur(1rem);
+  border: 1px solid rgba(0, 168, 204, 0.2);
+  border-radius: 1.5rem;
+  padding: 2rem;
+  max-width: 64rem;
+  margin-left: auto;
+  margin-right: auto;
+
+  .ctaTitle {
+    font-size: 1.875rem;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 1rem;
+    font-family: "clash", sans-serif;
+  }
+
+  .ctaDescription {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 1.125rem;
+    margin-bottom: 1.5rem;
+    font-family: "manrope", sans-serif;
+    max-width: 32rem;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.6;
+  }
+
+  .ctaButton {
+    background: linear-gradient(135deg, #00a8cc, #0077be);
+    color: var(--white);
+    padding: 1rem 2rem;
+    border-radius: 9999px;
+    font-weight: 600;
+    font-family: "satoshi", sans-serif;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+
+    &:hover {
+      box-shadow: 0 10px 25px rgba(0, 168, 204, 0.3);
+      transform: scale(1.05);
+    }
+
+    .ctaIcon {
+      font-size: 1.125rem;
+    }
+  }
+}
+
+// Animation Keyframes
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 0.1;
+  }
+  50% {
+    opacity: 0.2;
+  }
+}
+
+// Responsive Design
+@media (max-width: 768px) {
+  .industryExpertise {
+    padding: 3rem 0;
+  }
+
+  .sectionHeader {
+    margin-bottom: 2rem;
+  }
+
+  .slideshowContent {
+    gap: 2rem;
+  }
+
+  .industryTitles {
+    gap: 0.75rem;
+  }
+
+  .ctaSection {
+    margin-top: 3rem;
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .industryExpertise {
+    padding: 2rem 0;
+  }
+
+  .sectionHeader {
+    margin-bottom: 1.5rem;
+  }
+
+  .slideshowContent {
+    gap: 1.5rem;
+  }
+
+  .industryTitles {
+    gap: 0.5rem;
+  }
+
+  .imageContainer {
+    max-width: 100%;
+  }
+
+  .ctaSection {
+    margin-top: 2rem;
+    padding: 1rem;
+
+    .ctaTitle {
+      font-size: 1.5rem;
+    }
+
+    .ctaDescription {
+      font-size: 1rem;
+    }
+
+    .ctaButton {
+      padding: 0.75rem 1.5rem;
+      font-size: 0.9rem;
+    }
+  }
+}
