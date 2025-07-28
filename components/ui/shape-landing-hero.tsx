@@ -1,9 +1,10 @@
 "use client";
 
 import { motion, useMotionValue, useTransform, animate, easeOut } from "framer-motion";
-import { Circle } from "lucide-react";
+import { Circle, ArrowRight } from "lucide-react";
 import { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
+import Link from "next/link";
 
 
 function ElegantShape({
@@ -147,18 +148,7 @@ function HeroGeometric({
 
             <div className="relative z-10 container mx-auto px-4 md:px-6">
                 <div className="max-w-3xl mx-auto text-center">
-                    <motion.div
-                        custom={0}
-                        variants={fadeUpVariants}
-                        initial="hidden"
-                        animate="visible"
-                        className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/[0.03] border border-white/[0.08] mb-8 md:mb-12"
-                    >
-                        <Circle className="h-2 w-2 fill-rose-500/80" />
-                        <span className="text-sm text-white/60 tracking-wide">
-                            {badge}
-                        </span>
-                    </motion.div>
+
 
                     <motion.div
                         custom={1}
@@ -192,8 +182,85 @@ function HeroGeometric({
                             innovative design and cutting-edge technology.
                         </p>
                     </motion.div>
+                    
+                    {/* Sub-Brands Section */}
+                    <motion.div
+                        custom={3}
+                        variants={fadeUpVariants}
+                        initial="hidden"
+                        animate="visible"
+                        className="mt-12 md:mt-16"
+                    >
+                        <div className="text-center mb-6">
+                            <p className="text-sm text-white/50 tracking-wide uppercase font-medium">
+                                Our Sub-Brands
+                            </p>
+                        </div>
+                        
+                        <div className="flex flex-col sm:flex-row items-center justify-center gap-6 md:gap-8">
+                            {/* Fly Networks */}
+                            <Link href="/flynetworks" className="group">
+                                <motion.div 
+                                    className="relative overflow-hidden rounded-2xl bg-white/[0.05] border border-white/[0.1] p-4 transition-all duration-300 hover:bg-white/[0.1] hover:border-white/[0.2] hover:scale-105"
+                                    whileHover={{ y: -5 }}
+                                    whileTap={{ scale: 0.95 }}
+                                >
+                                    <div className="relative">
+                                        <img 
+                                            src="/brands/WhatsApp Image 2025-07-26 at 23.48.14_5a0e3a3f.jpg" 
+                                            alt="Fly Networks" 
+                                            className="w-32 h-32 md:w-40 md:h-40 object-cover rounded-xl transition-transform duration-300 group-hover:scale-110"
+                                        />
+                                        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                                    </div>
+                                    
+                                    {/* Hover Overlay */}
+                                    <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300">
+                                        <div className="text-center">
+                                            <h3 className="text-white font-semibold text-lg mb-2">Fly Networks</h3>
+                                            <div className="flex items-center justify-center gap-2 text-white/80 text-sm">
+                                                <span>Explore</span>
+                                                <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </motion.div>
+                            </Link>
+
+                            {/* Imports & Exports */}
+                            <Link href="/imports-exports" className="group">
+                                <motion.div 
+                                    className="relative overflow-hidden rounded-2xl bg-white/[0.05] border border-white/[0.1] p-4 transition-all duration-300 hover:bg-white/[0.1] hover:border-white/[0.2] hover:scale-105"
+                                    whileHover={{ y: -5 }}
+                                    whileTap={{ scale: 0.95 }}
+                                >
+                                    <div className="relative">
+                                        <img 
+                                            src="/brands/WhatsApp Image 2025-07-27 at 15.13.38_cb6edaae.jpg" 
+                                            alt="Imports & Exports" 
+                                            className="w-32 h-32 md:w-40 md:h-40 object-cover rounded-xl transition-transform duration-300 group-hover:scale-110"
+                                        />
+                                        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                                    </div>
+                                    
+                                    {/* Hover Overlay */}
+                                    <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300">
+                                        <div className="text-center">
+                                            <h3 className="text-white font-semibold text-lg mb-2">Imports & Exports</h3>
+                                            <div className="flex items-center justify-center gap-2 text-white/80 text-sm">
+                                                <span>Explore</span>
+                                                <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </motion.div>
+                            </Link>
+                        </div>
+                    </motion.div>
                 </div>
+                
             </div>
+            
 
             <div className="absolute inset-0 bg-gradient-to-t from-[#030303] via-transparent to-[#030303]/80 pointer-events-none" />
         </div>

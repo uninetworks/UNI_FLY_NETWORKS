@@ -5,7 +5,7 @@ import { HeroGeometric } from "@/components/ui/shape-landing-hero"
 const Hero = () => {
   return (
     <div>
-      <HeroGeometric badge="Kokonut UI"
+      <HeroGeometric
             title1 = "Elevate Your"
             title2 = "Digital Vision" />
     </div>

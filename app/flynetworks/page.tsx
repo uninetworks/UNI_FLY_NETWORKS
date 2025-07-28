@@ -1,7 +1,13 @@
 "use client";
 
 import React from "react";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
+import Lottie from "lottie-react";
+import animi1 from "../../public/lotti/Abroad study.json"
+import animi2 from "../../public/lotti/career.json"
+
+import infinity from "../../public/lotti/Loader 4.json"
+
 import { 
   Globe,
   GraduationCap,
@@ -22,50 +28,145 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 import { Header1 } from "@/components/ui/header";
+import { cn } from "@/lib/utils";
+import { useState } from "react";
+
+// Hover Effect Components
+export const HoverEffect = ({
+  items,
+  className
+}) => {
+  let [hoveredIndex, setHoveredIndex] = useState(null);
+
+  return (
+    <div
+      className={cn("grid grid-cols-1 md:grid-cols-2  lg:grid-cols-3  py-10", className)}>
+      {items.map((item, idx) => (
+        <a
+          href={item?.link}
+          key={idx}
+          className="relative group block p-2 h-full w-full"
+          onMouseEnter={() => setHoveredIndex(idx)}
+          onMouseLeave={() => setHoveredIndex(null)}>
+          <AnimatePresence>
+            {hoveredIndex === idx && (
+              <motion.span
+                className="absolute inset-0 h-full w-full bg-gradient-to-br from-green-100 via-green-50 to-white block rounded-3xl shadow-2xl"
+                layoutId="hoverBackground"
+                initial={{ opacity: 0, scale: 0.95 }}
+                animate={{
+                  opacity: 1,
+                  scale: 1,
+                  transition: { duration: 0.3, ease: "easeOut" },
+                }}
+                exit={{
+                  opacity: 0,
+                  scale: 0.95,
+                  transition: { duration: 0.2, ease: "easeIn" },
+                }} />
+            )}
+          </AnimatePresence>
+          <Card>
+            {item.icon && <CardIcon>{item.icon}</CardIcon>}
+            <CardTitle>{item.title}</CardTitle>
+            <CardDescription>{item.description}</CardDescription>
+            {item.countries && <CardCountries countries={item.countries} />}
+          </Card>
+        </a>
+      ))}
+    </div>
+  );
+};
+
+export const Card = ({
+  className,
+  children
+}) => {
+  return (
+    <div
+      className={cn(
+        "rounded-2xl h-full w-full p-1 overflow-hidden bg-white border border-gray-200 group-hover:border-green-300 relative z-20 shadow-lg hover:shadow-2xl transition-all duration-300 group-hover:scale-105",
+        className
+      )}>
+      <div className="relative z-50">
+        <div className="p-8">{children}</div>
+      </div>
+    </div>
+  );
+};
+
+export const CardIcon = ({
+  className,
+  children
+}) => {
+  return (
+    <div className={cn("flex items-center justify-center mb-4", className)}>
+      {children}
+    </div>
+  );
+};
+
+export const CardTitle = ({
+  className,
+  children
+}) => {
+  return (
+    <h4 className={cn("text-gray-800 font-bold tracking-wide mt-1 text-xl group-hover:text-green-700 transition-colors duration-300", className)}>
+      {children}
+    </h4>
+  );
+};
+
+export const CardDescription = ({
+  className,
+  children
+}) => {
+  return (
+    <p
+      className={cn("mt-3 text-gray-600 tracking-wide leading-relaxed text-sm group-hover:text-gray-700 transition-colors duration-300", className)}>
+      {children}
+    </p>
+  );
+};
+
+export const CardCountries = ({
+  countries
+}) => {
+  return (
+    <div className="mt-4">
+      <h5 className="text-gray-700 font-semibold mb-3 text-sm">Available Countries:</h5>
+      <div className="space-y-1">
+        {countries.map((country, index) => (
+          <div key={index} className="flex items-center space-x-2">
+            <div className="w-1.5 h-1.5 bg-green-500 rounded-full flex-shrink-0"></div>
+            <span className="text-gray-600 text-sm">{country}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};
 
 const services = [
   {
-    icon: GraduationCap,
-    title: "Study Abroad Guidance",
-    description: "Complete support for international education",
+    icon: animi1,
+    title: "Study Abroad Services",
+    description: "Embark on an enriching educational journey with FlyNetworks. We understand that studying abroad is a life-changing experience, and our expert counselors are here to guide you every step of the way.",
     features: [
-      "Country selection & university matching",
-      "SOP, LOR, application submission",
-      "Documentation & visa filing",
-      "Post-admission support"
+      "University and Course Selection: We help you identify the right academic path based on your interests, qualifications, and career goals",
+      "Application Guidance: Our team provides meticulous support in preparing and submitting your applications to ensure they stand out",
+      "Student Visa Assistance: We offer expert guidance on the entire student visa application process, from documentation to interview preparation",
+      "Pre-Departure Support: We provide essential information and support to help you prepare for your new life in a different country"
     ]
   },
   {
-    icon: Briefcase,
-    title: "Job Opportunities Abroad",
-    description: "Verified openings worldwide",
+    icon: animi2,
+    title: "Job Placement Services",
+    description: "Unlock your global career potential with FlyNetworks. We specialize in connecting talented individuals with exciting employment opportunities across various international markets.",
     features: [
-      "Verified openings in Gulf, Europe, Canada, Australia",
-      "Skill-based and experience-based job categories",
-      "End-to-end processing from offer to onboarding",
-      "Transparent salaries and service fees"
-    ]
-  },
-  {
-    icon: FileText,
-    title: "Visa & Immigration",
-    description: "Complete visa assistance",
-    features: [
-      "Tourist, student, work, and dependent visa support",
-      "Complete documentation and consulate preparation",
-      "Updates on new immigration rules and chances",
-      "Legal guidance and compliance"
-    ]
-  },
-  {
-    icon: Plane,
-    title: "Full Package Assistance",
-    description: "End-to-end support services",
-    features: [
-      "Flight tickets & accommodation help",
-      "Pre-departure training",
-      "Legal guidance and international compliance",
-      "Customer support from India and abroad"
+      "Overseas Employment with Work Visas: We facilitate employment in a range of sectors and connect you with employers seeking international talent",
+      "Visit and Immigration Services: Our team provides comprehensive assistance with visit visas and other immigration-related processes",
+      "Personalized Consultation: We offer one-on-one guidance to understand your professional background and career aspirations, matching you with the right opportunities"
     ]
   }
 ];
@@ -90,6 +191,45 @@ const countries = [
   {
     region: "Asia",
     countries: ["Singapore", "Malaysia", "Japan"]
+  }
+];
+
+// Destinations data for hover effect
+const destinations = [
+  {
+    title: "Gulf Countries",
+    description: "Premier destinations for international students with world-class universities and vibrant cultural experiences.",
+    countries: ["UAE", "Saudi Arabia", "Qatar", "Kuwait"],
+    // icon: <Globe className="w-8 h-8 text-green-500" />,
+    link: "#"
+  },
+  {
+    title: "Europe",
+    description: "Rich academic heritage with affordable education and diverse cultural opportunities.",
+    countries: ["Germany", "Poland", "Romania", "Portugal", "France"],
+    // icon: <GraduationCap className="w-8 h-8 text-blue-500" />,
+    link: "#"
+  },
+  {
+    title: "North America",
+    description: "Top-tier universities with cutting-edge research facilities and excellent career prospects.",
+    countries: ["Canada", "USA"],
+    // icon: <Briefcase className="w-8 h-8 text-purple-500" />,
+    link: "#"
+  },
+  {
+    title: "Australia & New Zealand",
+    description: "High-quality education with stunning landscapes and excellent work opportunities.",
+    countries: ["Australia", "New Zealand"],
+    // icon: <Plane className="w-8 h-8 text-orange-500" />,
+    link: "#"
+  },
+  {
+    title: "Asia",
+    description: "Emerging education hubs with modern facilities and strong industry connections.",
+    countries: ["Singapore", "Malaysia", "Japan"],
+    // icon: <Award className="w-8 h-8 text-red-500" />,
+    link: "#"
   }
 ];
 
@@ -210,13 +350,15 @@ export default function FlyNetworksPage() {
               </div>
               
               <h1 className="text-4xl md:text-6xl font-bold mb-6">
-                <span className="bg-gradient-to-r from-green-400 via-green-500 to-green-600 bg-clip-text text-transparent">FlyNetworks</span>
+                <span className="text-gray-800"></span>
+                <span className="text-green-500">FlyNet</span>
+                <span className="bg-gradient-to-r from-green-700 via-green-600 to-gray-800 bg-clip-text text-transparent">works</span>
               </h1>
               <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-6">
                 Your Gateway to Global Opportunities
               </p>
               <p className="text-lg text-gray-400 max-w-4xl mx-auto mb-8">
-                Specialized brand under UniNetworks, focused on empowering individuals with global opportunities through comprehensive Abroad Study, Immigration, Visa Assistance, and International Job Placement services.
+                FlyNetworks is a dynamic and forward-thinking consultancy dedicated to empowering individuals to achieve their academic and professional aspirations on a global scale. As a specialized unit of Uninetworks, we leverage a robust network and deep industry expertise to facilitate seamless transitions for students and professionals seeking to study or work abroad. Our team, based in Vijayawada, India, is committed to providing personalized guidance and comprehensive support throughout your entire journey.
               </p>
             </motion.div>
           </motion.div>
@@ -233,14 +375,13 @@ export default function FlyNetworksPage() {
           >
             <motion.div variants={itemVariants} className="text-center">
               <h2 className="text-3xl md:text-5xl font-bold text-gray-800 mb-6">
-                Our{" "}
-                <span className="bg-gradient-to-r from-green-600 via-green-500 to-green-400 bg-clip-text text-transparent">
-                  Mission
-                </span>
+                <span className="text-gray-800">Our </span>
+                <span className="text-green-500">Mis</span>
+                <span className="bg-gradient-to-r from-green-700 via-green-600 to-gray-800 bg-clip-text text-transparent">sion</span>
               </h2>
               <div className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 max-w-4xl mx-auto">
                 <blockquote className="text-2xl md:text-3xl font-semibold text-gray-800 italic">
-                  "To connect aspirations with international destinations through transparent, reliable, and personalized support services."
+                  "Our mission is to be the most trusted partner for individuals aspiring to broaden their horizons through international education and employment. We are dedicated to simplifying the complexities of visa and immigration processes, ensuring a smooth and successful path to your chosen destination."
                 </blockquote>
               </div>
             </motion.div>
@@ -258,35 +399,50 @@ export default function FlyNetworksPage() {
           >
             <motion.div variants={itemVariants} className="text-center mb-16">
               <h2 className="text-3xl md:text-5xl font-bold text-gray-800 mb-6">
-                Our{" "}
-                <span className="bg-gradient-to-r from-green-600 via-green-500 to-green-400 bg-clip-text text-transparent">
-                  Services
-                </span>
+                <span className="text-gray-800">Our </span>
+                <span className="text-green-500">Ser</span>
+                <span className="bg-gradient-to-r from-green-700 via-green-600 to-gray-800 bg-clip-text text-transparent">vices</span>
               </h2>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto">
                 Comprehensive support for your international journey
               </p>
             </motion.div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
               {services.map((service, index) => (
                 <motion.div 
                   key={index}
                   variants={itemVariants}
-                  className="bg-white rounded-xl shadow-lg border border-gray-100 p-8 hover:shadow-xl transition-all duration-300"
+                  className="bg-white rounded-xl shadow-lg border border-gray-100 p-8 hover:shadow-xl transition-all duration-300 group"
+                  whileHover={{ y: -5 }}
                 >
-                  <div className="w-16 h-16 bg-gradient-to-r from-green-500 to-green-600 rounded-xl flex items-center justify-center mb-6">
-                    <service.icon className="w-8 h-8 text-white" />
+                  {/* Lottie Animation Container */}
+                  <div className="w-48 h-48 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                    <div className="w-40 h-40 flex justify-center items-center">
+                      <Lottie 
+                        animationData={service.icon}
+                        loop={true}
+                        autoplay={true}
+                        style={{ width: '100%', height: '100%' }}
+                      />
+                    </div>
                   </div>
+                  
                   <h3 className="text-2xl font-bold text-gray-800 mb-3">{service.title}</h3>
                   <p className="text-gray-600 mb-6">{service.description}</p>
                   
                   <div className="space-y-3">
                     {service.features.map((feature, featureIndex) => (
-                      <div key={featureIndex} className="flex items-center space-x-3">
+                      <motion.div 
+                        key={featureIndex} 
+                        className="flex items-center space-x-3"
+                        initial={{ opacity: 0, x: -20 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        transition={{ delay: featureIndex * 0.1 }}
+                      >
                         <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" />
                         <span className="text-gray-700">{feature}</span>
-                      </div>
+                      </motion.div>
                     ))}
                   </div>
                 </motion.div>
@@ -295,7 +451,7 @@ export default function FlyNetworksPage() {
           </motion.div>
         </section>
 
-        {/* Countries Section */}
+        {/* Destinations Section */}
         <section className="py-20 bg-gradient-to-br from-gray-50 to-white">
           <motion.div 
             className="max-w-7xl mx-auto px-6"
@@ -306,32 +462,16 @@ export default function FlyNetworksPage() {
           >
             <motion.div variants={itemVariants} className="text-center mb-16">
               <h2 className="text-3xl md:text-5xl font-bold text-gray-800 mb-6">
-                Countries We{" "}
-                <span className="bg-gradient-to-r from-green-600 via-green-500 to-green-400 bg-clip-text text-transparent">
-                  Serve
-                </span>
+                <span className="text-gray-800">Destinations for Your </span>
+                <span className="text-green-500">Aca</span>
+                <span className="bg-gradient-to-r from-green-700 via-green-600 to-gray-800 bg-clip-text text-transparent">demic Future</span>
               </h2>
+              <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
+                We facilitate student visas to a host of countries, with a special focus on popular destinations for international students.
+              </p>
             </motion.div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {countries.map((region, index) => (
-                <motion.div 
-                  key={index}
-                  variants={itemVariants}
-                  className="bg-white rounded-xl shadow-lg border border-gray-100 p-6 hover:shadow-xl transition-all duration-300"
-                >
-                  <h3 className="text-xl font-bold text-gray-800 mb-4">{region.region}</h3>
-                  <div className="space-y-2">
-                    {region.countries.map((country, countryIndex) => (
-                      <div key={countryIndex} className="flex items-center space-x-3">
-                        <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-                        <span className="text-gray-700">{country}</span>
-                      </div>
-                    ))}
-                  </div>
-                </motion.div>
-              ))}
-            </div>
+            <HoverEffect items={destinations} />
           </motion.div>
         </section>
 
@@ -346,10 +486,9 @@ export default function FlyNetworksPage() {
           >
             <motion.div variants={itemVariants} className="text-center mb-16">
               <h2 className="text-3xl md:text-5xl font-bold text-gray-800 mb-6">
-                Job{" "}
-                <span className="bg-gradient-to-r from-green-600 via-green-500 to-green-400 bg-clip-text text-transparent">
-                  Openings
-                </span>
+                <span className="text-gray-800">Job </span>
+                <span className="text-green-500">Ope</span>
+                <span className="bg-gradient-to-r from-green-700 via-green-600 to-gray-800 bg-clip-text text-transparent">nings</span>
               </h2>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
                 Sample roles with competitive salary ranges
@@ -400,10 +539,9 @@ export default function FlyNetworksPage() {
           >
             <motion.div variants={itemVariants} className="text-center mb-16">
               <h2 className="text-3xl md:text-5xl font-bold text-gray-800 mb-6">
-                Why Choose{" "}
-                <span className="bg-gradient-to-r from-green-600 via-green-500 to-green-400 bg-clip-text text-transparent">
-                  FlyNetworks?
-                </span>
+                <span className="text-gray-800">Why Choose </span>
+                <span className="text-green-500">Fly</span>
+                <span className="bg-gradient-to-r from-green-700 via-green-600 to-gray-800 bg-clip-text text-transparent">Networks?</span>
               </h2>
             </motion.div>
 
@@ -520,10 +658,9 @@ export default function FlyNetworksPage() {
           >
             <motion.div variants={itemVariants} className="text-center mb-16">
               <h2 className="text-3xl md:text-5xl font-bold text-gray-800 mb-6">
-                Frequently Asked{" "}
-                <span className="bg-gradient-to-r from-green-600 via-green-500 to-green-400 bg-clip-text text-transparent">
-                  Questions
-                </span>
+                <span className="text-gray-800">Frequently Asked </span>
+                <span className="text-green-500">Ques</span>
+                <span className="bg-gradient-to-r from-green-700 via-green-600 to-gray-800 bg-clip-text text-transparent">tions</span>
               </h2>
             </motion.div>
 
@@ -552,13 +689,12 @@ export default function FlyNetworksPage() {
             viewport={{ once: true }}
           >
             <motion.h2 variants={itemVariants} className="text-3xl md:text-5xl font-bold mb-6">
-              Ready to Start Your{" "}
-              <span className="bg-gradient-to-r from-green-400 via-green-500 to-green-600 bg-clip-text text-transparent">
-                Global Journey?
-              </span>
+              <span className="text-white">Ready to Start Your </span>
+              <span className="text-green-400">Glo</span>
+              <span className="bg-gradient-to-r from-green-500 via-green-400 to-green-300 bg-clip-text text-transparent">bal Journey?</span>
             </motion.h2>
             <motion.p variants={itemVariants} className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto">
-              Whether you're a student, job seeker, or planning to settle abroad, we provide end-to-end support to make your journey seamless, legal, and successful.
+              Our expertise lies in navigating the intricacies of work visas and immigration, making your dream of working abroad a tangible reality. Whether you're a student seeking international education or a professional looking for global opportunities, we're here to guide you every step of the way.
             </motion.p>
             <motion.div variants={itemVariants} className="flex flex-col sm:flex-row gap-4 justify-center">
               <a 
