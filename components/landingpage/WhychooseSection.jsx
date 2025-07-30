@@ -48,13 +48,13 @@ const WhyChooseSection = () => {
       <div className="relative z-10 max-w-7xl mx-auto px-6 py-16">
         <GsapFadeIn effect="slide-up" duration={1} delay={0.2}>
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-6xl font-bold text-gray-800 mb-6">
+            <h2 className="text-4xl md:text-6xl font-bold text-gray-800 mb-6 font-heading">
               Why Choose{" "}
               <span className="bg-gradient-to-r from-green-600 via-green-500 to-green-400 bg-clip-text text-transparent">
                 UNI Networks?
               </span>
             </h2>
-            <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto font-body">
               We deliver cutting-edge technology solutions with unmatched expertise and reliability.
             </p>
           </div>

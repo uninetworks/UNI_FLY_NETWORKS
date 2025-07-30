@@ -30,6 +30,7 @@ import Link from "next/link";
 import { Header1 } from "@/components/ui/header";
 import { cn } from "@/lib/utils";
 import { HoverEffect } from "@/components/ui/hover-effect";
+import { SparklesCore } from "@/components/ui/sparkles";
 
 const services = [
   {
@@ -218,8 +219,25 @@ export default function FlyNetworksPage() {
       <Header1 />
       <div className="pt-20">
         {/* Hero Section */}
-        <section className="bg-gradient-to-br from-gray-900 via-gray-800 to-black text-white py-20 relative overflow-hidden">
-          <div className="absolute top-10 right-10 w-64 h-64 bg-green-500/20 rounded-full opacity-30 blur-3xl"></div>
+        <section className="bg-flynetworks-pattern text-white py-20 relative overflow-hidden">
+          {/* Background Particles */}
+          <div className="w-full absolute inset-0 h-screen">
+            <SparklesCore
+              id="flynetworks-particles"
+              background="transparent"
+              minSize={0.6}
+              maxSize={1.4}
+              particleDensity={100}
+              className="w-full h-full"
+              particleColor="#22c55e"
+              speed={0.8}
+            />
+          </div>
+
+          {/* Gradient Overlay for Enhanced Visual Effect */}
+          <div className="absolute inset-0 bg-gradient-to-br from-black/20 via-transparent to-green-900/10"></div>
+          
+          <div className="absolute top-10 right-10 w-64 h-64 bg-green-500/20 rounded-full opacity-30 blur-3xl animate-float"></div>
           
           <motion.div 
             className="max-w-7xl mx-auto px-6 relative z-10"
@@ -228,22 +246,74 @@ export default function FlyNetworksPage() {
             animate="visible"
           >
             <motion.div variants={itemVariants} className="text-center">
+              {/* Logo Section */}
+              <motion.div 
+                className="mb-8"
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.6 }}
+              >
+                <img
+                  src="/brands/WhatsApp Image 2025-07-26 at 23.48.14_5a0e3a3f.jpg"
+                  alt="FlyNetworks Logo"
+                  className="w-32 h-32 md:w-40 md:h-40 mx-auto rounded-2xl shadow-2xl border-4 border-green-500/20"
+                />
+              </motion.div>
+              
               <div className="inline-flex items-center space-x-2 bg-green-500/20 backdrop-blur-sm text-green-400 px-6 py-2 rounded-full mb-6">
                 <Globe className="w-4 h-4" />
                 <span className="text-sm font-medium">Global Opportunities</span>
               </div>
               
-              <h1 className="text-4xl md:text-6xl font-bold mb-6">
-                <span className="text-gray-800"></span>
-                <span className="text-green-500">FlyNet</span>
+              {/* Main Title with Large Typography */}
+              <motion.h1 
+                className="md:text-7xl text-3xl lg:text-9xl font-bold mb-8 font-heading"
+                initial={{ opacity: 0, y: 50 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 1, delay: 0.2 }}
+              >
+                <span className="text-gradient-green">FlyNet</span>
                 <span className="bg-gradient-to-r from-green-700 via-green-600 to-gray-800 bg-clip-text text-transparent">works</span>
-              </h1>
-              <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-6">
-                Your Gateway to Global Opportunities
-              </p>
-              <p className="text-lg text-gray-400 max-w-4xl mx-auto mb-8">
+              </motion.h1>
+
+              {/* Glowing Line Effect */}
+              <motion.div 
+                className="w-[40rem] h-40 relative mx-auto mb-8"
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 1, delay: 0.8 }}
+              >
+                {/* Green Gradients */}
+                <div className="absolute inset-x-20 top-0 bg-gradient-to-r from-transparent via-green-500 to-transparent h-[2px] w-3/4 blur-sm" />
+                <div className="absolute inset-x-20 top-0 bg-gradient-to-r from-transparent via-green-500 to-transparent h-px w-3/4" />
+                <div className="absolute inset-x-60 top-0 bg-gradient-to-r from-transparent via-emerald-500 to-transparent h-[5px] w-1/4 blur-sm" />
+                <div className="absolute inset-x-60 top-0 bg-gradient-to-r from-transparent via-emerald-500 to-transparent h-px w-1/4" />
+
+                {/* Core Sparkles Component */}
+                <SparklesCore
+                  background="transparent"
+                  minSize={0.4}
+                  maxSize={1}
+                  particleDensity={1200}
+                  className="w-full h-full"
+                  particleColor="#22c55e"
+                />
+
+                {/* Radial Gradient to prevent sharp edges */}
+                <div className="absolute inset-0 w-full h-full bg-black [mask-image:radial-gradient(350px_200px_at_top,transparent_20%,white)]"> 
+                  <p className="text-2xl md:text-3xl font-semibold mt-13">
+                Your Gateway to Global Opportunities.
+              </p></div>
+              </motion.div>
+
+              <motion.p 
+                className="text-lg text-gray-400 max-w-4xl mx-auto mb-8"
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 1, delay: 1.4 }}
+              >
                 FlyNetworks is a dynamic and forward-thinking consultancy dedicated to empowering individuals to achieve their academic and professional aspirations on a global scale. As a specialized unit of Uninetworks, we leverage a robust network and deep industry expertise to facilitate seamless transitions for students and professionals seeking to study or work abroad. Our team, based in Vijayawada, India, is committed to providing personalized guidance and comprehensive support throughout your entire journey.
-              </p>
+              </motion.p>
             </motion.div>
           </motion.div>
         </section>
@@ -258,7 +328,7 @@ export default function FlyNetworksPage() {
             viewport={{ once: true }}
           >
             <motion.div variants={itemVariants} className="text-center">
-              <h2 className="text-3xl md:text-5xl font-bold text-gray-800 mb-6">
+              <h2 className="text-3xl md:text-5xl font-bold text-gray-800 mb-6 font-heading">
                 <span className="text-gray-800">Our </span>
                 <span className="text-green-500">Mis</span>
                 <span className="bg-gradient-to-r from-green-700 via-green-600 to-gray-800 bg-clip-text text-transparent">sion</span>
@@ -282,7 +352,7 @@ export default function FlyNetworksPage() {
             viewport={{ once: true }}
           >
             <motion.div variants={itemVariants} className="text-center mb-16">
-              <h2 className="text-3xl md:text-5xl font-bold text-gray-800 mb-6">
+              <h2 className="text-3xl md:text-5xl font-bold text-gray-800 mb-6 font-heading">
                 <span className="text-gray-800">Our </span>
                 <span className="text-green-500">Ser</span>
                 <span className="bg-gradient-to-r from-green-700 via-green-600 to-gray-800 bg-clip-text text-transparent">vices</span>
@@ -345,7 +415,7 @@ export default function FlyNetworksPage() {
             viewport={{ once: true }}
           >
             <motion.div variants={itemVariants} className="text-center mb-16">
-              <h2 className="text-3xl md:text-5xl font-bold text-gray-800 mb-6">
+              <h2 className="text-3xl md:text-5xl font-bold text-gray-800 mb-6 font-heading">
                 <span className="text-gray-800">Destinations for Your </span>
                 <span className="text-green-500">Aca</span>
                 <span className="bg-gradient-to-r from-green-700 via-green-600 to-gray-800 bg-clip-text text-transparent">demic Future</span>
@@ -369,7 +439,7 @@ export default function FlyNetworksPage() {
             viewport={{ once: true }}
           >
             <motion.div variants={itemVariants} className="text-center mb-16">
-              <h2 className="text-3xl md:text-5xl font-bold text-gray-800 mb-6">
+              <h2 className="text-3xl md:text-5xl font-bold text-gray-800 mb-6 font-heading">
                 <span className="text-gray-800">Job </span>
                 <span className="text-green-500">Ope</span>
                 <span className="bg-gradient-to-r from-green-700 via-green-600 to-gray-800 bg-clip-text text-transparent">nings</span>
@@ -422,7 +492,7 @@ export default function FlyNetworksPage() {
             viewport={{ once: true }}
           >
             <motion.div variants={itemVariants} className="text-center mb-16">
-              <h2 className="text-3xl md:text-5xl font-bold text-gray-800 mb-6">
+              <h2 className="text-3xl md:text-5xl font-bold text-gray-800 mb-6 font-heading">
                 <span className="text-gray-800">Why Choose </span>
                 <span className="text-green-500">Fly</span>
                 <span className="bg-gradient-to-r from-green-700 via-green-600 to-gray-800 bg-clip-text text-transparent">Networks?</span>
@@ -457,7 +527,7 @@ export default function FlyNetworksPage() {
             viewport={{ once: true }}
           >
             <motion.div variants={itemVariants} className="text-center mb-16">
-              <h2 className="text-3xl md:text-5xl font-bold text-gray-800 mb-6">
+              <h2 className="text-3xl md:text-5xl font-bold text-gray-800 mb-6 font-heading">
                 Get in{" "}
                 <span className="bg-gradient-to-r from-green-600 via-green-500 to-green-400 bg-clip-text text-transparent">
                   Touch
@@ -541,7 +611,7 @@ export default function FlyNetworksPage() {
             viewport={{ once: true }}
           >
             <motion.div variants={itemVariants} className="text-center mb-16">
-              <h2 className="text-3xl md:text-5xl font-bold text-gray-800 mb-6">
+              <h2 className="text-3xl md:text-5xl font-bold text-gray-800 mb-6 font-heading">
                 <span className="text-gray-800">Frequently Asked </span>
                 <span className="text-green-500">Ques</span>
                 <span className="bg-gradient-to-r from-green-700 via-green-600 to-gray-800 bg-clip-text text-transparent">tions</span>
@@ -572,7 +642,7 @@ export default function FlyNetworksPage() {
             whileInView="visible"
             viewport={{ once: true }}
           >
-            <motion.h2 variants={itemVariants} className="text-3xl md:text-5xl font-bold mb-6">
+            <motion.h2 variants={itemVariants} className="text-3xl md:text-5xl font-bold mb-6 font-heading">
               <span className="text-white">Ready to Start Your </span>
               <span className="text-green-400">Glo</span>
               <span className="bg-gradient-to-r from-green-500 via-green-400 to-green-300 bg-clip-text text-transparent">bal Journey?</span>

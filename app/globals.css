@@ -6,8 +6,10 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-inter);
+  --font-heading: var(--font-playfair);
+  --font-body: var(--font-poppins);
+  --font-mono: var(--font-inter);
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
@@ -117,7 +119,23 @@
     @apply border-border outline-ring/50;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-body;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading;
+  }
+  
+  .font-heading {
+    font-family: var(--font-playfair);
+  }
+  
+  .font-body {
+    font-family: var(--font-poppins);
+  }
+  
+  .font-sans {
+    font-family: var(--font-inter);
   }
 }
 .gradientText {
@@ -128,4 +146,83 @@
   background-size: 200% 200%;
   animation: gradientShift 3s ease-in-out infinite;
   filter: drop-shadow(0 0 20px rgba(99, 204, 0, 0.39));
+}
+
+/* Enhanced Background Patterns */
+.bg-hero-pattern {
+  background-image: 
+    radial-gradient(circle at 25% 25%, rgba(0, 204, 44, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 75% 75%, rgba(0, 204, 44, 0.05) 0%, transparent 50%),
+    linear-gradient(135deg, rgba(0, 0, 0, 0.8) 0%, rgba(22, 22, 22, 0.9) 100%);
+}
+
+.bg-flynetworks-pattern {
+  background-image: 
+    radial-gradient(circle at 20% 20%, rgba(34, 197, 94, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(16, 185, 129, 0.05) 0%, transparent 50%),
+    linear-gradient(135deg, rgba(17, 24, 39, 0.95) 0%, rgba(31, 41, 55, 0.9) 100%);
+}
+
+.bg-imports-exports-pattern {
+  background-image: 
+    radial-gradient(circle at 30% 30%, rgba(59, 130, 246, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 70% 70%, rgba(37, 99, 235, 0.05) 0%, transparent 50%),
+    linear-gradient(135deg, rgba(17, 24, 39, 0.95) 0%, rgba(31, 41, 55, 0.9) 100%);
+}
+
+.bg-glass {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.bg-glass-dark {
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Animated Background */
+@keyframes gradientShift {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+/* Enhanced Typography */
+.text-gradient-primary {
+  background: linear-gradient(135deg, #00cc2c 0%, #16a34a 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.text-gradient-blue {
+  background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.text-gradient-green {
+  background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }

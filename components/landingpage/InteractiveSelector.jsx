@@ -71,12 +71,12 @@ const InteractiveSelector = () => {
     <div className="relative flex flex-col items-center justify-center min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 font-sans text-gray-800"> 
       {/* Header Section */}
       <div className="w-full max-w-2xl px-6 mt-8 mb-2 text-center">
-        <h1 className="text-4xl md:text-5xl font-extrabold mb-3 tracking-tight drop-shadow-lg animate-fadeInTop delay-300">
+        <h1 className="text-4xl md:text-5xl font-extrabold mb-3 tracking-tight drop-shadow-lg animate-fadeInTop delay-300 font-heading">
           <span className="bg-gradient-to-r from-green-600 via-green-500 to-green-400 bg-clip-text text-transparent">
             Services We Do
           </span>
         </h1>
-        <p className="text-lg md:text-xl text-gray-600 font-medium max-w-xl mx-auto animate-fadeInTop delay-600">
+        <p className="text-lg md:text-xl text-gray-600 font-medium max-w-xl mx-auto animate-fadeInTop delay-600 font-body">
           Discover our comprehensive range of technology solutions and services.
         </p>
       </div>

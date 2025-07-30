@@ -23,6 +23,7 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 import { Header1 } from "@/components/ui/header";
+import { Squares } from "@/components/ui/squares-background";
 
 const services = [
   {
@@ -167,8 +168,24 @@ export default function ImportsExportsPage() {
       <Header1 />
       <div className="pt-20">
         {/* Hero Section */}
-        <section className="bg-gradient-to-br from-gray-900 via-gray-800 to-black text-white py-20 relative overflow-hidden">
-          <div className="absolute top-10 right-10 w-64 h-64 bg-blue-500/20 rounded-full opacity-30 blur-3xl"></div>
+        <section className="bg-imports-exports-pattern text-white py-20 relative overflow-hidden">
+          {/* Squares Background Effect */}
+          <div className="absolute inset-0 w-full h-full z-0">
+            <Squares
+              direction="diagonal"
+              speed={0.3}
+              squareSize={50}
+              borderColor="#1a2b4d" // Dark blue for borders
+              hoverFillColor="#0a1428" // Even darker blue on hover
+              className="z-0"
+            />
+          </div>
+
+          {/* Gradient Overlay for Enhanced Visual Effect */}
+          <div className="absolute inset-0 bg-gradient-to-br from-black/30 via-transparent to-blue-900/10 z-10"></div>
+          
+          <div className="absolute top-10 right-10 w-64 h-64 bg-blue-500/20 rounded-full opacity-30 blur-3xl animate-float"></div>
+          <div className="absolute bottom-10 left-10 w-64 h-64 bg-orange-500/20 rounded-full opacity-30 blur-3xl animate-float delay-200"></div>
           
           <motion.div 
             className="max-w-7xl mx-auto px-6 relative z-10"
@@ -177,16 +194,30 @@ export default function ImportsExportsPage() {
             animate="visible"
           >
             <motion.div variants={itemVariants} className="text-center">
+              {/* Logo Section */}
+              <motion.div 
+                className="mb-8"
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.6 }}
+              >
+                <img
+                  src="/brands/WhatsApp Image 2025-07-27 at 15.13.38_cb6edaae.jpg"
+                  alt="Imports & Exports Logo"
+                  className="w-32 h-32 md:w-40 md:h-40 mx-auto rounded-2xl shadow-2xl border-4 border-blue-500/20"
+                />
+              </motion.div>
+              
               <div className="inline-flex items-center space-x-2 bg-blue-500/20 backdrop-blur-sm text-blue-400 px-6 py-2 rounded-full mb-6">
                 <Globe className="w-4 h-4" />
                 <span className="text-sm font-medium">A Division of UniNetworks</span>
               </div>
               
-              <h1 className="text-4xl md:text-6xl font-bold mb-6">
-                <span className="bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600 bg-clip-text text-transparent">Imports & Exports</span>
+              <h1 className="text-4xl md:text-6xl font-bold mb-6 font-heading">
+                <span className="text-gradient-blue">Imports & Exports</span>
               </h1>
               <p className="text-2xl md:text-3xl font-semibold mb-6">
-                We Move Goods, Grow Businesses. Locally & Globally.
+                Your Gateway to Global Opportunities.
               </p>
               <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-8">
                 Reliable import and export services to help you expand your business across borders.
@@ -220,7 +251,7 @@ export default function ImportsExportsPage() {
             viewport={{ once: true }}
           >
             <motion.div variants={itemVariants} className="text-center mb-16">
-              <h2 className="text-3xl md:text-5xl font-bold text-gray-800 mb-6">
+              <h2 className="text-3xl md:text-5xl font-bold text-gray-800 mb-6 font-heading">
                 Who We{" "}
                 <span className="bg-gradient-to-r from-blue-600 via-blue-500 to-blue-400 bg-clip-text text-transparent">
                   Are
@@ -280,7 +311,7 @@ export default function ImportsExportsPage() {
             viewport={{ once: true }}
           >
             <motion.div variants={itemVariants} className="text-center mb-16">
-              <h2 className="text-3xl md:text-5xl font-bold text-gray-800 mb-6">
+              <h2 className="text-3xl md:text-5xl font-bold text-gray-800 mb-6 font-heading">
                 Our{" "}
                 <span className="bg-gradient-to-r from-blue-600 via-blue-500 to-blue-400 bg-clip-text text-transparent">
                   Services
@@ -328,7 +359,7 @@ export default function ImportsExportsPage() {
             viewport={{ once: true }}
           >
             <motion.div variants={itemVariants} className="text-center mb-16">
-              <h2 className="text-3xl md:text-5xl font-bold text-gray-800 mb-6">
+              <h2 className="text-3xl md:text-5xl font-bold text-gray-800 mb-6 font-heading">
                 Types of Products We{" "}
                 <span className="bg-gradient-to-r from-blue-600 via-blue-500 to-blue-400 bg-clip-text text-transparent">
                   Handle
@@ -361,7 +392,7 @@ export default function ImportsExportsPage() {
             viewport={{ once: true }}
           >
             <motion.div variants={itemVariants} className="text-center mb-16">
-              <h2 className="text-3xl md:text-5xl font-bold text-gray-800 mb-6">
+              <h2 className="text-3xl md:text-5xl font-bold text-gray-800 mb-6 font-heading">
                 Why Choose{" "}
                 <span className="bg-gradient-to-r from-blue-600 via-blue-500 to-blue-400 bg-clip-text text-transparent">
                   Us
@@ -397,7 +428,7 @@ export default function ImportsExportsPage() {
             viewport={{ once: true }}
           >
             <motion.div variants={itemVariants} className="text-center mb-16">
-              <h2 className="text-3xl md:text-5xl font-bold text-gray-800 mb-6">
+              <h2 className="text-3xl md:text-5xl font-bold text-gray-800 mb-6 font-heading">
                 Let's Trade{" "}
                 <span className="bg-gradient-to-r from-blue-600 via-blue-500 to-blue-400 bg-clip-text text-transparent">
                   Smarter
@@ -512,7 +543,7 @@ export default function ImportsExportsPage() {
             whileInView="visible"
             viewport={{ once: true }}
           >
-            <motion.h2 variants={itemVariants} className="text-3xl md:text-5xl font-bold mb-6">
+            <motion.h2 variants={itemVariants} className="text-3xl md:text-5xl font-bold mb-6 font-heading">
               Ready to Expand Your{" "}
               <span className="bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600 bg-clip-text text-transparent">
                 Business Globally?

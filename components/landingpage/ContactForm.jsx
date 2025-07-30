@@ -73,13 +73,13 @@ const ContactForm = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <motion.h2 variants={itemVariants} className="text-4xl md:text-6xl font-bold text-white mb-6">
+          <motion.h2 variants={itemVariants} className="text-4xl md:text-6xl font-bold text-white mb-6 font-heading">
             Get In{" "}
             <span className="bg-gradient-to-r from-green-400 via-green-500 to-green-600 bg-clip-text text-transparent">
               Touch
             </span>
           </motion.h2>
-          <motion.p variants={itemVariants} className="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto">
+          <motion.p variants={itemVariants} className="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto font-body">
             Ready to transform your business with cutting-edge technology solutions? Let's discuss your project.
           </motion.p>
         </motion.div>
@@ -93,7 +93,7 @@ const ContactForm = () => {
             viewport={{ once: true }}
             className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20"
           >
-            <h3 className="text-2xl font-bold text-white mb-6">Send us a Message</h3>
+            <h3 className="text-2xl font-bold text-white mb-6 font-heading">Send us a Message</h3>
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
@@ -221,7 +221,7 @@ const ContactForm = () => {
             className="space-y-8"
           >
             <div>
-              <h3 className="text-2xl font-bold text-white mb-6">Contact Information</h3>
+              <h3 className="text-2xl font-bold text-white mb-6 font-heading">Contact Information</h3>
               <p className="text-gray-300 mb-8">
                 Ready to discuss your next project? Reach out to our team of experts.
               </p>

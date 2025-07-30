@@ -18,6 +18,11 @@ function Header1() {
             href: "/",
             description: "",
         },
+        // {
+        //     title: "Home Animated",
+        //     href: "/animated",
+        //     description: "",
+        // },
         {
             title: "About",
             href: "/about",

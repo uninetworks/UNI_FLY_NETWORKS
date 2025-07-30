@@ -101,7 +101,7 @@ function HeroGeometric({
   };
 
   return (
-    <div className="relative min-h-screen w-full flex items-center justify-center overflow-hidden bg-[#030303]">
+    <div className="relative min-h-screen w-full flex items-center justify-center overflow-hidden bg-hero-pattern">
       <div className="absolute inset-0 bg-gradient-to-br from-indigo-500/[0.05] via-transparent to-rose-500/[0.05] blur-3xl" />
 
       <div className="absolute inset-0 overflow-hidden">
@@ -153,13 +153,35 @@ function HeroGeometric({
 
       <div className="relative z-10 container mx-auto px-4 md:px-6">
         <div className="max-w-3xl mx-auto text-center">
+          {/* Main Logo Section */}
+          <motion.div
+            custom={0}
+            variants={fadeUpVariants}
+            initial="hidden"
+            animate="visible"
+            className="mb-8"
+          >
+            <motion.div 
+              className="inline-block"
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+            >
+              <img
+                src="/brands/WhatsApp Image 2025-07-26 at 23.47.29_f519cde9.jpg"
+                alt="UniNetworks Logo"
+                className="w-24 h-24 md:w-32 md:h-32 mx-auto rounded-2xl shadow-2xl border-4 border-white/20 backdrop-blur-sm"
+              />
+            </motion.div>
+          </motion.div>
+          
           <motion.div
             custom={1}
             variants={fadeUpVariants}
             initial="hidden"
             animate="visible"
           >
-            <h1 className="text-4xl sm:text-6xl md:text-8xl font-bold mb-6 md:mb-8 tracking-tight">
+            <h1 className="text-4xl sm:text-6xl md:text-8xl font-bold mb-6 md:mb-8 tracking-tight font-heading">
               <span className="bg-clip-text text-transparent bg-gradient-to-b from-white to-white/80">
                 {title1}
               </span>
