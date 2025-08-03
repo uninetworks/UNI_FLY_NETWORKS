@@ -210,7 +210,7 @@ export default function ImportsExportsPage() {
               
               <div className="inline-flex items-center space-x-2 bg-blue-500/20 backdrop-blur-sm text-blue-400 px-6 py-2 rounded-full mb-6">
                 <Globe className="w-4 h-4" />
-                <span className="text-sm font-medium">A Division of UniNetworks</span>
+                <span className="text-sm font-medium">A Division of Uninetworks</span>
               </div>
               
               <h1 className="text-4xl md:text-6xl font-bold mb-6 font-heading">
@@ -262,10 +262,10 @@ export default function ImportsExportsPage() {
             <motion.div variants={itemVariants} className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div className="space-y-6">
                 <p className="text-lg text-gray-700 leading-relaxed">
-                  At <strong>UniNetworks Imports & Exports</strong>, we specialize in the seamless movement of goods both locally and internationally. Whether you want to bring high-quality products into India or ship your brand across the globe, we handle everything from procurement to delivery.
+                  At <strong>Uninetworks Imports & Exports</strong>, we specialize in the seamless movement of goods both locally and internationally. Whether you want to bring high-quality products into India or ship your brand across the globe, we handle everything from procurement to delivery.
                 </p>
                 <p className="text-lg text-gray-700 leading-relaxed">
-                  We work across industries, enabling startups, SMEs, and established companies to enter new markets without the complexity. Backed by the trust of UniNetworks, our mission is to make cross-border trade simple, legal, and profitable.
+                  We work across industries, enabling startups, SMEs, and established companies to enter new markets without the complexity. Backed by the trust of Uninetworks, our mission is to make cross-border trade simple, legal, and profitable.
                 </p>
               </div>
               
@@ -293,7 +293,7 @@ export default function ImportsExportsPage() {
                     <div className="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center">
                       <CheckCircle className="w-5 h-5 text-white" />
                     </div>
-                    <span className="text-gray-700 font-semibold">Trusted by UniNetworks</span>
+                    <span className="text-gray-700 font-semibold">Trusted by Uninetworks</span>
                   </div>
                 </div>
               </div>
@@ -457,8 +457,8 @@ export default function ImportsExportsPage() {
                   </div>
                   <div>
                     <h3 className="text-xl font-semibold text-gray-800">Email</h3>
-                    <a href="mailto:uninetworks@outlook.com" className="text-blue-600 hover:text-blue-700">
-                      uninetworks@outlook.com
+                    <a href="mailto:Uninetworks@outlook.com" className="text-blue-600 hover:text-blue-700">
+                      Uninetworks@outlook.com
                     </a>
                   </div>
                 </div>
@@ -528,7 +528,7 @@ export default function ImportsExportsPage() {
           >
             <motion.div variants={itemVariants} className="bg-gradient-to-r from-gray-50 to-blue-50 p-8 rounded-2xl border border-gray-100">
               <p className="text-lg text-gray-700 italic">
-                <strong>"Imports & Exports"</strong> is a division of UniNetworks, a company trusted for IT, cloud, international consulting, and trading services.
+                <strong>"Imports & Exports"</strong> is a division of Uninetworks, a company trusted for IT, cloud, international consulting, and trading services.
               </p>
             </motion.div>
           </motion.div>

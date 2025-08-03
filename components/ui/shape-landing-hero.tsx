@@ -152,16 +152,16 @@ function HeroGeometric({
       </div>
 
       <div className="relative z-10 container mx-auto px-4 md:px-6">
-        <div className="max-w-3xl mx-auto text-center">
+        <div className="max-w-6xl mx-auto text-center">
           {/* Main Logo Section */}
-          <motion.div
+          {/* <motion.div
             custom={0}
             variants={fadeUpVariants}
             initial="hidden"
             animate="visible"
             className="mb-8"
           >
-            <motion.div 
+            <motion.div
               className="inline-block"
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
@@ -169,28 +169,23 @@ function HeroGeometric({
             >
               <img
                 src="/brands/WhatsApp Image 2025-07-26 at 23.47.29_f519cde9.jpg"
-                alt="UniNetworks Logo"
+                alt="Uninetworks Logo"
                 className="w-24 h-24 md:w-32 md:h-32 mx-auto rounded-2xl shadow-2xl border-4 border-white/20 backdrop-blur-sm"
               />
             </motion.div>
-          </motion.div>
-          
+          </motion.div> */}
+
           <motion.div
             custom={1}
             variants={fadeUpVariants}
             initial="hidden"
             animate="visible"
           >
-            <h1 className="text-4xl sm:text-6xl md:text-8xl font-bold mb-6 md:mb-8 tracking-tight font-heading">
+            <h1 className="text-3xl sm:text-5xl md:text-7xl font-bold mb-6 md:mb-8 tracking-tight font-heading whitespace-nowrap text-center">
               <span className="bg-clip-text text-transparent bg-gradient-to-b from-white to-white/80">
                 {title1}
-              </span>
-              <br />
-              <span
-                className={cn(
-                  "bg-clip-text text-transparent bg-gradient-to-r from-indigo-300 via-white/90 to-rose-300 "
-                )}
-              >
+              </span>&nbsp;
+              <span className="bg-clip-text text-transparent bg-gradient-to-r from-indigo-300 via-white/90 to-rose-300">
                 {title2}
               </span>
             </h1>

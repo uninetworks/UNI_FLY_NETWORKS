@@ -17,7 +17,7 @@ export default function AnimatedHomePage() {
           {/* Background Particles */}
           <div className="w-full absolute inset-0 h-screen">
             <SparklesCore
-              id="uninetworks-particles"
+              id="Uninetworks-particles"
               background="transparent"
               minSize={0.6}
               maxSize={1.4}
@@ -37,7 +37,7 @@ export default function AnimatedHomePage() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1, delay: 0.2 }}
             >
-              UniNetworks
+              Uninetworks
             </motion.h1>
 
             {/* Glowing Line Effect */}
@@ -133,7 +133,7 @@ export default function AnimatedHomePage() {
             >
               <h2 className="text-3xl md:text-5xl font-bold mb-6 font-heading">
                 <span className="text-white">Why Choose </span>
-                <span className="text-gradient-primary">UniNetworks?</span>
+                <span className="text-gradient-primary">Uninetworks?</span>
               </h2>
               <p className="text-lg text-gray-300 max-w-3xl mx-auto font-body">
                 Experience the difference with our comprehensive approach to digital transformation and technology solutions.

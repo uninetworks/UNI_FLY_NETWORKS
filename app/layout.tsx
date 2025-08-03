@@ -23,8 +23,8 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: "UniNetworks - Your Gateway to Global Opportunities",
-  description: "UniNetworks provides comprehensive services including FlyNetworks for study abroad and job placement, and Imports & Exports for international trade solutions.",
+  title: "Uninetworks - Your Gateway to Global Opportunities",
+  description: "Uninetworks provides comprehensive services including FlyNetworks for study abroad and job placement, and Imports & Exports for international trade solutions.",
 };
 
 export default function RootLayout({

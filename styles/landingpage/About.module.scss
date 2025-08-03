@@ -31,12 +31,11 @@
   padding: 0 4rem;
   width: 100%;
   display: flex;
-  align-items: center;
-  gap: 3rem;
+  flex-direction: column;
+  gap: 4rem;
 
   @media (max-width: 1024px) {
-    flex-direction: column;
-    gap: 4rem;
+    gap: 3rem;
     padding: 0 2rem;
   }
 
@@ -45,11 +44,23 @@
   }
 }
 
-.aboutsection1 {
+.topSection {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  width: 100%;
+
+  @media (max-width: 1024px) {
+    flex-direction: column;
+    gap: 4rem;
+  }
+}
+
+.aboutHeader {
   display: flex;
   flex-direction: column;
   width: 65%;
-  gap: 3rem;
+  gap: 2rem;
 
   @media (max-width: 1024px) {
     width: 100%;
@@ -62,7 +73,7 @@
   justify-content: center;
   align-items: center;
   width: 35%;
-  height: 600px;
+  height: 400px;
   position: relative;
 
   @media (max-width: 1024px) {

@@ -167,15 +167,22 @@ const ContactForm = () => {
                   name="service"
                   value={formData.service}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent"
+                  className="w-full px-4 py-3 bg-gray-800 border border-white/20 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent"
+                  style={{
+                    backgroundImage: `url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='m6 8 4 4 4-4'/%3e%3c/svg%3e")`,
+                    backgroundPosition: 'right 0.5rem center',
+                    backgroundRepeat: 'no-repeat',
+                    backgroundSize: '1.5em 1.5em',
+                    paddingRight: '2.5rem'
+                  }}
                 >
-                  <option value="">Select a service</option>
-                  <option value="web-development">Web Development</option>
-                  <option value="mobile-app">Mobile App Development</option>
-                  <option value="cloud-solutions">Cloud Solutions</option>
-                  <option value="cybersecurity">Cybersecurity</option>
-                  <option value="consulting">IT Consulting</option>
-                  <option value="other">Other</option>
+                  <option value="" className="bg-gray-800 text-white">Select a service</option>
+                  <option value="web-development" className="bg-gray-800 text-white">Web Development</option>
+                  <option value="mobile-app" className="bg-gray-800 text-white">Mobile App Development</option>
+                  <option value="cloud-solutions" className="bg-gray-800 text-white">Cloud Solutions</option>
+                  <option value="cybersecurity" className="bg-gray-800 text-white">Cybersecurity</option>
+                  <option value="consulting" className="bg-gray-800 text-white">IT Consulting</option>
+                  <option value="other" className="bg-gray-800 text-white">Other</option>
                 </select>
               </div>
 
@@ -256,8 +263,8 @@ const ContactForm = () => {
                 </div>
                 <div>
                   <h4 className="text-lg font-semibold text-white mb-1">Email</h4>
-                  <a href="mailto:pavanmeruva@uninetworks.in" className="text-gray-300 hover:text-green-400 transition-colors">
-                    pavanmeruva@uninetworks.in
+                  <a href="mailto:pavanmeruva@Uninetworks.in" className="text-gray-300 hover:text-green-400 transition-colors">
+                    pavanmeruva@Uninetworks.in
                   </a>
                 </div>
               </div>
@@ -268,15 +275,15 @@ const ContactForm = () => {
                 </div>
                 <div>
                   <h4 className="text-lg font-semibold text-white mb-1">Customer Enquiry</h4>
-                  <a href="mailto:uninetworks@outlook.com" className="text-gray-300 hover:text-green-400 transition-colors">
-                    uninetworks@outlook.com
+                  <a href="mailto:Uninetworks@outlook.com" className="text-gray-300 hover:text-green-400 transition-colors">
+                    Uninetworks@outlook.com
                   </a>
                 </div>
               </div>
             </div>
 
             <div className="p-6 bg-gradient-to-r from-green-500/20 to-green-600/20 rounded-xl border border-green-500/30">
-              <h4 className="text-lg font-semibold text-white mb-2">Why Choose UNI Networks?</h4>
+              <h4 className="text-lg font-semibold text-white mb-2">Why Choose Uninetworks?</h4>
               <ul className="text-gray-300 space-y-2 text-sm">
                 <li>• Expert team with years of experience</li>
                 <li>• Cutting-edge technology solutions</li>

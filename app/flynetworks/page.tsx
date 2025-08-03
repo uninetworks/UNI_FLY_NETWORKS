@@ -590,7 +590,7 @@ export default function FlyNetworksPage() {
               <motion.div variants={itemVariants} className="bg-gradient-to-br from-gray-50 to-white p-8 rounded-2xl border border-gray-100">
                 <h3 className="text-2xl font-bold text-gray-800 mb-6">Legal & Licensing</h3>
                 <p className="text-gray-600 mb-6">
-                  FlyNetworks is a licensed entity under the parent company <strong>UniNetworks</strong>, and holds all necessary legal permissions to operate nationally and internationally.
+                  FlyNetworks is a licensed entity under the parent company <strong>Uninetworks</strong>, and holds all necessary legal permissions to operate nationally and internationally.
                 </p>
                 <div className="flex items-center space-x-2 text-green-600">
                   <Award className="w-5 h-5" />

@@ -51,7 +51,7 @@ const WhyChooseSection = () => {
             <h2 className="text-4xl md:text-6xl font-bold text-gray-800 mb-6 font-heading">
               Why Choose{" "}
               <span className="bg-gradient-to-r from-green-600 via-green-500 to-green-400 bg-clip-text text-transparent">
-                UNI Networks?
+                Uninetworks?
               </span>
             </h2>
             <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto font-body">
@@ -63,12 +63,12 @@ const WhyChooseSection = () => {
         <GsapFadeIn effect="fade" duration={1.2} delay={0.4}>
           <HoverSlider className="min-h-[600px] place-content-center p-6 md:px-12 ">
             <div className="flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-16">
-              <div className="flex flex-col space-y-4 lg:space-y-6 w-full lg:w-1/2">
+              <div className="flex flex-col space-y-4 lg:space-y-5 w-full lg:w-1/2">
                 {SLIDES.map((slide, index) => (
                   <TextStaggerHover
                     key={slide.title}
                     index={index}
-                    className="cursor-pointer text-2xl md:text-3xl lg:text-4xl font-bold uppercase tracking-tight text-gray-800 hover:text-green-600 transition-colors duration-300"
+                    className="cursor-pointer text-2xl md:text-3xl lg:text-3xl font-bold uppercase tracking-tight text-gray-800 hover:text-green-600 transition-colors duration-300"
                     text={slide.title}
                   />
                 ))}

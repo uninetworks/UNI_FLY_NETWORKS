@@ -73,7 +73,7 @@ export default function AboutPage() {
                 <h1 className="text-4xl md:text-6xl font-bold mb-6">
                   About{" "}
                   <span className="bg-gradient-to-r from-green-400 via-green-500 to-green-600 bg-clip-text text-transparent">
-                    UNI Networks
+                    Uninetworks
                   </span>
                 </h1>
                 <p className="text-xl text-gray-300 mb-8 leading-relaxed">
@@ -202,7 +202,7 @@ export default function AboutPage() {
                 <h2 className="text-3xl md:text-5xl font-bold text-gray-800 mb-8">
                   Why Choose{" "}
                   <span className="bg-gradient-to-r from-green-600 via-green-500 to-green-400 bg-clip-text text-transparent">
-                    UNI Networks?
+                    Uninetworks?
                   </span>
                 </h2>
                 <div className="space-y-6">
@@ -293,7 +293,7 @@ export default function AboutPage() {
               </span>
             </motion.h2>
             <motion.p variants={itemVariants} className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto">
-              Let's discuss how UNI Networks can help your business achieve its technology goals.
+              Let's discuss how Uninetworks can help your business achieve its technology goals.
             </motion.p>
             <motion.div variants={itemVariants}>
               <Link 
