@@ -69,11 +69,15 @@ function Header1() {
                     <p className="font-semibold">Uninetworks</p>
                 </div>
                 <div className="flex justify-end w-full gap-4">
-                    <Button variant="ghost" className="hidden md:inline">
-                        Book a demo
-                    </Button>
+                    <Link href="/contact">
+                        <Button variant="ghost" className="hidden md:inline">
+                            Book a demo
+                        </Button>
+                    </Link>
                     <div className="border-r hidden md:inline"></div> 
-                    <Button>Get started</Button>
+                    <Link href="/contact">
+                        <Button>Get started</Button>
+                    </Link>
                 </div>
                 <div className="flex w-12 shrink lg:hidden items-end justify-end">
                     <Button variant="ghost" onClick={() => setOpen(!isOpen)}>

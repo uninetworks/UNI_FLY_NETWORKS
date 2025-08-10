@@ -476,39 +476,43 @@ export default function ImportsExportsPage() {
 
               <motion.div variants={itemVariants} className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100">
                 <h3 className="text-2xl font-bold text-gray-800 mb-6">Get a Free Consultation</h3>
-                <form className="space-y-4">
+                <form className="space-y-6">
                   <div>
                     <input
                       type="text"
                       placeholder="Your Name"
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                      required
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors placeholder-gray-500"
                     />
                   </div>
                   <div>
                     <input
                       type="email"
                       placeholder="Your Email"
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                      required
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors placeholder-gray-500"
                     />
                   </div>
                   <div>
                     <input
                       type="tel"
                       placeholder="Your Phone"
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors placeholder-gray-500"
                     />
                   </div>
                   <div>
                     <textarea
                       placeholder="Your Message"
-                      rows={4}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                      required
+                      rows={5}
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors placeholder-gray-500 resize-none"
                     ></textarea>
                   </div>
                   <button
                     type="submit"
-                    className="w-full px-8 py-4 bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white rounded-lg hover:shadow-lg transition-all font-semibold transform hover:scale-105"
+                    className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-300 flex items-center justify-center"
                   >
+                    <MessageCircle className="w-5 h-5 mr-2" />
                     Send Message
                   </button>
                 </form>
