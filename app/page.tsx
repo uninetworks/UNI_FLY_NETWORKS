@@ -11,8 +11,8 @@ export default function Home() {
     <>
     <Header1 />
     <Hero />
-    <About />
     <InteractiveSelector />
+    <About />
     <WhyChooseSection />
     <ContactForm />
     </>
