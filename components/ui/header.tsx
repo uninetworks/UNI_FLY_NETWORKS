@@ -74,10 +74,10 @@ function Header1() {
                             Book a demo
                         </Button>
                     </Link>
-                    <div className="border-r hidden md:inline"></div> 
-                    <Link href="/contact">
+                    {/* <div className="border-r hidden md:inline"></div>  */}
+                    {/* <Link href="/contact">
                         <Button>Get started</Button>
-                    </Link>
+                    </Link> */}
                 </div>
                 <div className="flex w-12 shrink lg:hidden items-end justify-end">
                     <Button variant="ghost" onClick={() => setOpen(!isOpen)}>

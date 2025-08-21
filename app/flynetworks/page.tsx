@@ -312,7 +312,7 @@ export default function FlyNetworksPage() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 1, delay: 1.4 }}
               >
-                FlyNetworks is a dynamic and forward-thinking consultancy dedicated to empowering individuals to achieve their academic and professional aspirations on a global scale. As a specialized unit of Uninetworks, we leverage a robust network and deep industry expertise to facilitate seamless transitions for students and professionals seeking to study or work abroad. Our team, based in Vijayawada, India, is committed to providing personalized guidance and comprehensive support throughout your entire journey.
+                FlyNetworks is a dynamic and forward-thinking consultancy dedicated to empowering individuals to achieve their academic and professional aspirations on a global scale.
               </motion.p>
             </motion.div>
           </motion.div>
@@ -335,7 +335,7 @@ export default function FlyNetworksPage() {
               </h2>
               <div className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 max-w-4xl mx-auto">
                 <blockquote className="text-2xl md:text-3xl font-semibold text-gray-800 italic">
-                  "Our mission is to be the most trusted partner for individuals aspiring to broaden their horizons through international education and employment. We are dedicated to simplifying the complexities of visa and immigration processes, ensuring a smooth and successful path to your chosen destination."
+                  "We help individuals pursue international education and careers by simplifying visa and immigration processes, ensuring a smooth and successful journey to their chosen destination."
                 </blockquote>
               </div>
             </motion.div>
