@@ -371,8 +371,8 @@ export default function FlyNetworksPage() {
                   whileHover={{ y: -5 }}
                 >
                   {/* Lottie Animation Container */}
-                  <div className="flex justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                    <div className="w-58 h-58 flex items-center justify-center">
+                  <div className="w-48 h-48 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                    <div className="w-40 h-40 flex justify-center items-center">
                       <Lottie 
                         animationData={service.icon}
                         loop={true}
