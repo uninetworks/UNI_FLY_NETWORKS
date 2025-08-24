@@ -319,7 +319,7 @@ export default function FlyNetworksPage() {
         </section>
 
         {/* Mission Section */}
-        <section className="py-20 bg-gradient-to-br from-gray-50 to-white">
+        {/* <section className="py-20 bg-gradient-to-br from-gray-50 to-white">
           <motion.div 
             className="max-w-7xl mx-auto px-6"
             variants={containerVariants}
@@ -340,7 +340,7 @@ export default function FlyNetworksPage() {
               </div>
             </motion.div>
           </motion.div>
-        </section>
+        </section> */}
 
         {/* Services Section */}
         <section className="py-20 bg-white">
@@ -371,8 +371,8 @@ export default function FlyNetworksPage() {
                   whileHover={{ y: -5 }}
                 >
                   {/* Lottie Animation Container */}
-                  <div className="w-48 h-48 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                    <div className="w-40 h-40 flex justify-center items-center">
+                  <div className="flex justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                    <div className="w-58 h-58 flex items-center justify-center">
                       <Lottie 
                         animationData={service.icon}
                         loop={true}
